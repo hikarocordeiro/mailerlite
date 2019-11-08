@@ -1,5 +1,3 @@
-run command: php -S 127.0.0.1:8000 -t public
-
 # PHP API
 
 HTTP API backend service for managing two resources and their relations: subscribers and fields
