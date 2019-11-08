@@ -20,7 +20,7 @@ php -S 127.0.0.1:8000 -t public
 
 ## Client
 
-There is a client that can be used to access API, check for the correct URL case you're running on a different machine than server.
+There is a client that can be used to access API, check for the correct URL in case you're running on a different machine than server.
 Files to check under client:
 
 ```
