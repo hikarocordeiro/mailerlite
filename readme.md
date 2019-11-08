@@ -2,6 +2,10 @@
 
 HTTP API backend service for managing two resources and their relations: subscribers and fields
 
+## Prerequisites
+
+This project was developed using PHP 7.1, MySQL 5.7 and Composer
+
 ## Installing
 
  1. Checkout the project
@@ -14,11 +18,7 @@ HTTP API backend service for managing two resources and their relations: subscri
 php -S 127.0.0.1:8000 -t public
 ```
 
-### Prerequisites
-
-This project was developed using PHP 7.1, MySQL 5.7 and Composer
-
-### Client
+## Client
 
 There is a client that can be used to access API, check for the correct URL case you're running on a different machine than server.
 Files to check under client:
