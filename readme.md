@@ -5,9 +5,10 @@ HTTP API backend service for managing two resources and their relations: subscri
 ## Installing
 
  1. Checkout the project
- 2. Use Composer to install packages
- 3. Rename .env.examplt to .env and set your MySQL configuration
- 4. Run command from terminal:
+ 2. Create a database and import mailerlite.sql in your MySQL
+ 3. Use Composer to install packages
+ 4. Rename .env.examplt to .env and set your MySQL configuration
+ 5. Run command from terminal:
 
 ```
 php -S 127.0.0.1:8000 -t public
@@ -15,7 +16,7 @@ php -S 127.0.0.1:8000 -t public
 
 ### Prerequisites
 
-This project was developed using PHP 7.1, MySql 5.7 and Composer
+This project was developed using PHP 7.1, MySQL 5.7 and Composer
 
 ### Client
 
@@ -40,4 +41,4 @@ To run the PHPUnit Tests
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
