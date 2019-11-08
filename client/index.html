@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Subscribers</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Subscribers</a></li>
+            <li><a href="fields.html">Fields</a></li>
+            <li><a href="subscribers_fields.html">Subscribers Fields</a></li>
+        </ul>
+    </div>
+
+  <div class="container" id="app">
+    <h1 class="text-center">Subscribers</h1>
+    <form>
+      <input type="hidden" v-model="subscriberData.id" />
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="name" type="text" v-model="subscriberData.name">
+          <label id="label-name" for="name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" v-model="subscriberData.email">
+          <label id="label-email" for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="select-wrapper">
+            <select id="state" v-model="subscriberData.state" class="input-field browser-default">
+              <option value="1">active</option>
+              <option value="2">unsubscribed</option>
+              <option value="3">junk</option>
+              <option value="4">bounced</option>
+              <option value="5">unconfirmed</option>
+            </select>
+          </div>
+          <label for="state">State</label>
+        </div>
+      </div>
+
+      <button class="save" @click.prevent="save">Save</button>
+    </form>
+
+    <table class="highlight">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>State</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody v-for="subscriber in processedSubscribers">
+        <tr>
+          <td>{{ subscriber.name }}</td>
+          <td>{{ subscriber.email }}</td>
+          <td>{{ subscriber.state }}</td>
+          <td >
+              <button class="edit" v-on:click="getSubscriber(subscriber.id)">edit</button>
+              <button class="delete" v-on:click="deleteSubscriber(subscriber.id)">delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+ 
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="subscribers.js"></script>  
+</body>
+</html>

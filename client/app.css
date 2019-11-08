@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  min-height: 100%;
+}
+
+body {
+  background: #09C269;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body, input {
+  color: #222;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu ul {
+  max-width: 700px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 20px auto;
+}
+
+#menu ul li {
+  display: inline;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  list-style: none;
+	padding: 10px 20px;
+	text-transform: capitalize;
+	font-weight: 600;
+	transition: all 0.75s;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: #222;
+}
+
+.save {
+  background: #09C269;
+  border: 0;
+
+  border-radius: 4px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  padding: 10px 15px;
+
+  font-size: 16px;
+  transition: border 0.25s ease-out;
+}
+
+.container {
+  max-width: 700px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px 30px 30px;
+  margin: 20px auto;
+}
+
+.container h1 {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+}
+
+.edit {
+  background: rgb(123, 156, 255);
+  border: 0;
+
+  border-radius: 4px;
+  color: #fff;
+
+  justify-content: center;
+  align-items: center;
+
+
+  padding: 8px 10px;
+
+  font-size: 14px;
+  transition: border 0.25s ease-out;
+}
+.delete {
+  background: rgb(255, 96, 96);
+  border: 0;
+
+  border-radius: 4px;
+  color: #fff;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 10px;
+
+  font-size: 14px;
+  transition: border 0.25s ease-out;
+}

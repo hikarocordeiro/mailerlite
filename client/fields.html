@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fields</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Subscribers</a></li>
+            <li><a href="fields.html">Fields</a></li>
+            <li><a href="subscribers_fields.html">Subscribers Fields</a></li>
+        </ul>
+    </div>
+
+  <div class="container" id="app">
+    <h1 class="text-center">Fields</h1>
+    <form>
+      <input type="hidden" v-model="fieldData.id" />
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="title" type="text" v-model="fieldData.title">
+          <label id="label-title" for="title">Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="select-wrapper">
+            <select id="type" v-model="fieldData.type" class="input-field browser-default">
+              <option value="1">date</option>
+              <option value="2">number</option>
+              <option value="3">string</option>
+              <option value="4">boolean</option>
+            </select>
+          </div>
+          <label for="type">Type</label>
+        </div>
+      </div>
+
+      <button class="save" @click.prevent="save">Save</button>
+    </form>
+
+    <table class="highlight">
+      <thead>
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody v-for="field in processedFields">
+        <tr>
+          <td>{{ field.title }}</td>
+          <td>{{ field.type }}</td>
+          <td >
+              <button class="edit" v-on:click="getField(field.id)">edit</button>
+              <button class="delete" v-on:click="deleteField(field.id)">delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="fields.js"></script>  
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Subscribers Fields</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Subscribers</a></li>
+            <li><a href="fields.html">Fields</a></li>
+            <li><a href="subscribers_fields.html">Subscribers Fields</a></li>
+        </ul>
+    </div>
+
+  <div class="container" id="app">
+    <h1 class="text-center">Subscribers Fields</h1>
+    <form>
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="select-wrapper">
+            <select id="subscriber" v-model="subscriberFieldData.subscriber" @change="handleSubscriberFields" class="input-field browser-default">
+              <option v-for="subscriber in subscribers" v-bind:value="subscriber.id">
+                {{ subscriber.name }}
+              </option>
+            </select>
+          </div>
+          <label for="subscriber">Subscriber</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="select-wrapper">
+            <select id="field" v-model="subscriberFieldData.field" class="input-field browser-default">
+              <option v-for="field in fields" v-bind:value="field.id">
+                {{ field.title }}
+              </option>
+            </select>
+          </div>
+          <label for="field">Field</label>
+        </div>
+      </div>
+      <button class="save" @click.prevent="postSubscriberField">Save</button>
+    </form>
+
+    <table class="highlight">
+      <thead>
+        <tr>
+            <th>Field</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody v-for="item in processedSubscribers">
+        <tr>
+          <td>{{item.title}}</td>
+          <td >
+              <button class="delete" v-on:click="deleteSubscriberField(item.id)">delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="subscribers_fields.js"></script>  
+</body>
+</html>
