@@ -22,8 +22,8 @@ class SubscriberTest extends TestCase
     public function testPost()
     {
         $formData = [
-            'name' => 'Hikaro',
-            'email' => 'hikaro.cordeiro@gmail.com',
+            'name' => 'Fulano',
+            'email' => 'fulano@gmail.com',
             'state' => 1
 
         ];
